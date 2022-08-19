@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "52bb5abe-86ae-47b7-bf03-1da12d5515c4",
+		"name": "Apps7 Data Engineer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Apps7 - POST ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ad_network\": \"AD_NETWORK\",\n    \"date\": \"DATE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

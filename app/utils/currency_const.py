@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# Constants for currency conversion
+DEFAULT_EUR_USD = 1.012674  # 1 EUR = 1.012674 USD (2022-07-27)
+DEFAULT_GBP_USD = 1.216471  # 1 GBP = 1.216471 USD (2022-07-27)
+DEFAULT_CNY_USD = 0.147962  # 1 CNY = 0.147962 USD (2022-07-27)
+DEFAULT_HKD_USD = 0.127394  # 1 HKD = 0.127394 USD (2022-07-27)

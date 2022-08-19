@@ -1,0 +1,62 @@
+A: With a "sanity check", we found that the SuperNetwork report for September 16, 
+   2017 was meaningless. We came to this conclusion by checking the name of the 
+   data columns, the correctness of the type of all data, the date format, the 
+   name of the application and the platform, and the meaning of the number of 
+   requests and impressions. For the latter, we found that it is meaningless for 
+   the My Talking Ben application, since the number of impressions cannot be 
+   greater than the number of requests, which consequently means that the report 
+   for the given day and the given application is meaningless and needs to be 
+   corrected or removed. (answer to sub-question of problem 2)
+
+Q: What do you think could also go wrong, besides the examples above? And what 
+   kind of “sanity checks” would you implement to prevent the importing of “bad” 
+   reports?
+A: There are many things that could go wrong, for example the data could be 
+   mixed up according to the column name, which should be fixed, the columns 
+   could just be wrongly named or placed in a meaningful order. Also, the date 
+   could be in the wrong format, but it would still be the date and consistent 
+   for the entire file. The names of applications and platforms could be invalid 
+   or non-existent, which means that the entries of such data should be ignored. 
+   With the number of requests and impressions, in addition to the above 
+   problem, we must pay attention to the fact that the data is numerical. As for 
+   the last revenue column, we must pay attention to know in which currency the 
+   revenue is entered and only then convert it into a single currency that is 
+   stored in the database. I would prevent the entry of incorrect or bad reports 
+   by implementing security mechanisms that would recognize the above problems 
+   and deal with them accordingly. The only solution to some problems is to 
+   delete the inappropriate entry, which will unfortunately result in losing the 
+   data (or requesting it from the provider again). However, where it would be 
+   possible, for example a case where the number of impressions is inadequate, 
+   I would try to make an ML model that would be able to predict the number in 
+   the event of a wrong entry, thus retaining the data, but at the cost of 
+   actual accuracy.
+
+Q: Apps7 would now like to retrieve many kinds of data from 30+ different 
+   adNetworks. Their APIs can fail unexpectedly, data can be incomplete and need 
+   to be reimported later, etc… How would you design a system so all these 
+   unexpected situations could be managed with minimal overhead? What kind of 
+   (existing) technologies would you use?
+A: I would try to make a system that would handle most of the possible 
+   unpredictable events in the simplest and most transparent way, and if there 
+   were any errors, the data could be easily updated and corrected. For data
+   processing (data transformation) I would choose Apache Spark, because of its 
+   parallel processing capabilities. For building straightforward and modular 
+   data pipelines, I would choose Apache Airflow. I would use Apache Kafka for 
+   data collection and transportation. For storing the data and using computing 
+   and cloning features, I would use Snowflake or Amazon Redshift as a 
+   cloud-based data warehouse. For data visualization, I would use Tableau.
+
+Q: Which Google Cloud Platform products would you choose and how would you use 
+   them to build your application?
+A: I would choose the following Google Cloud Platform products:
+   - BigQuery: I would use the product for 
+     storing and working with data, writing direct SQL queries, and interactive 
+     data analysis.
+   - Dataprep: I would use the product to 
+     research, clean, and prepare structured and unstructured data.
+   - Cloud Data Fusion: I would use the 
+     product to create and maintain data pipelines, as well as use their visual 
+     user interface for easier deployment of ETL/ELT pipelines.
+   - Looker: I would use the product for 
+     visualizing data, embedded analytics, and using LookML (Looker's modeling language).
+   I would also consider using Data Studio, Dataproc, and Dataflow.
